@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #10ed2e;
+}
+
+.game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 1fr;
+    max-width: 500px;
+    padding: 9px;
+    margin: 5px;
+    border: 5px solid black;
+    gap: 5px;
+    
+}
+
+.display{
+    grid-column: span 3;
+    text-align: center;
+    
+    margin: 3px;
+    padding: 15px 10px;
+    font-size: 1.5em;
+    background-color: #fff;
+    border: 3px solid black;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 3px;
+    border: 3px solid black;
+}
+
+button:active {
+    color: blue;
+    border: 3px solid red;
+}
