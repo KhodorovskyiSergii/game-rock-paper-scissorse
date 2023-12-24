@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>гра: камінь, ножиці, папір!</title>
 </head>
 <body>
-    <div class="game">
-        <!-- <img class="" src="images/Capture.PNG" alt="foto"> -->
-        <div class="display" id="display">A're you redy to start?</div>
-        <button onclick="makeChoice('Камень')">Камень</button>
-        <button onclick="makeChoice('Воздух')">Воздух</button>
-        <button onclick="makeChoice('Бумага')">Бумага</button>
-        <button onclick="makeChoice('Гупка')">Гупка</button>
-        <button onclick="makeChoice('Ножници')">Ножници</button>
-        <button onclick="makeChoice('Огонь')">Огонь</button>
-        <button onclick="makeChoice('Вода')">Вода</button>
-        <button onclick="buttonOk('ok')">ok</button>
-        <button onclick="buttonHelp('help')">help</button>
+    <div id="instruction" style="display: none;">
+    <img src="images/Capture.PNG" alt="foto">
+    <button  onclick="backToGame()">back to game</button>
+    </div>
+    <div id="myGame" class="game">
+        <div class="displayCoputer" id="displayCoputer">Вибір компютера</div>
+        <div class="displayPlayer" id="displayPlayer">Вибір гравця</div>
+        <button onclick="playerChoice('Камень')">Камень</button>
+        <button onclick="playerChoice('Воздух')">Воздух</button>
+        <button onclick="playerChoice('Бумага')">Бумага</button>
+        <button onclick="playerChoice('Гупка')">Гупка</button>
+        <button onclick="playerChoice('Ножници')">Ножници</button>
+        <button onclick="playerChoice('Огонь')">Огонь</button>
+        <button onclick="playerChoice('Вода')">Вода</button>
+        <button onclick="buttonCheck('check')">check</button>
+        <button onclick="buttonHelp()">help</button>
     </div>
     <script src="index.js"></script>
 </body>
-</html>
+</html> 

@@ -19,16 +19,29 @@ body{
     
 }
 
-.display{
+.displayPlayer{
     grid-column: span 3;
     text-align: center;
-    
     margin: 3px;
     padding: 15px 10px;
     font-size: 1.5em;
+    color: #da1317;
     background-color: #fff;
     border: 3px solid black;
 }
+
+
+.displayCoputer{
+    grid-column: span 3;
+    text-align: center;
+    margin: 3px;
+    padding: 15px 10px;
+    font-size: 1.5em;
+    color: #5f0ae8;
+    background-color: #fff;
+    border: 3px solid black;
+}
+
 
 button {
     cursor: pointer;
