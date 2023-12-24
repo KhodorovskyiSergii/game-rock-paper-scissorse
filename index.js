@@ -25,15 +25,13 @@ function playerChoice(button) {
     computer = computerChoiceS();
     displayPlayer();
     displayComputer();
-    // fundWiner();
 }
 
 function computerChoiceS(){
    
-    let choices = ['Камень', 'Воздух', 'Бумага', 'Гупка', 'Ножници', 'Огонь', 'Вода'];
+    let choices = ['Камінь', 'Повітря', 'Папір', 'Гупка', 'Ножиці', 'Вогонь', 'Вода'];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    // computer += computerChoice;
- 
+  
     fundWiner();
     return computerChoice;
 }; 
@@ -41,23 +39,23 @@ function computerChoiceS(){
 
 function fundWiner() {
 setTimeout(function() { 
-if ((computer === 'Камень' && (player === 'Огонь' || player === 'Ножници' || player === 'Гупка')) ||
-(computer === 'Огонь' && (player === 'Бумага' || player === 'Ножници' || player === 'Гупка')) ||
-(computer === 'Ножници' && (player === 'Воздух' || player === 'Бумага' || player === 'Гупка')) ||
-(computer === 'Гупка' && (player === 'Бумага' || player === 'Воздух' || player === 'Вода')) ||
-(computer === 'Бумага' && (player === 'Воздух' || player === 'Вода' || player === 'Камень')) ||
-(computer === 'Воздух' && (player === 'Вода' || player === 'Камень' || player === 'Огонь')) ||
-(computer === 'Вода' && (player === 'Камень' || player === 'Огонь' || player === 'Ножници'))) {
+if ((computer === 'Камінь' && (player === 'Вогонь' || player === 'Ножиці' || player === 'Гупка')) ||
+(computer === 'Вогонь' && (player === 'Папір' || player === 'Ножиці' || player === 'Гупка')) ||
+(computer === 'Ножиці' && (player === 'Повітря' || player === 'Папір' || player === 'Гупка')) ||
+(computer === 'Гупка' && (player === 'Папір' || player === 'Повітря' || player === 'Вода')) ||
+(computer === 'Папір' && (player === 'Повітря' || player === 'Вода' || player === 'Камінь')) ||
+(computer === 'Повітря' && (player === 'Вода' || player === 'Камінь' || player === 'Вогонь')) ||
+(computer === 'Вода' && (player === 'Камінь' || player === 'Вогонь' || player === 'Ножиці'))) {
     score -= 1;
     document.getElementById('displayPlayer').innerHTML = 'Ти програв!';
     document.getElementById('displayComputer').innerHTML = 'Рахунок : ' + score;
-} else if ((player === 'Камень' && (computer === 'Огонь' || computer === 'Ножници' || computer === 'Гупка')) ||
-(player === 'Огонь' && (computer === 'Бумага' || computer === 'Ножници' || computer === 'Гупка')) ||
-(player === 'Ножници' && (computer === 'Воздух' || computer === 'Бумага' || computer === 'Гупка')) ||
-(player === 'Гупка' && (computer === 'Бумага' || computer === 'Воздух' || computer === 'Вода')) ||
-(player === 'Бумага' && (computer === 'Воздух' || computer === 'Вода' || computer === 'Камень')) ||
-(player === 'Воздух' && (computer === 'Вода' || computer === 'Камень' || computer === 'Огонь')) ||
-(player === 'Вода' && (computer === 'Камень' || computer === 'Огонь' || computer === 'Ножници')))
+} else if ((player === 'Камінь' && (computer === 'Вогонь' || computer === 'Ножиці' || computer === 'Гупка')) ||
+(player === 'Вогонь' && (computer === 'Папір' || computer === 'Ножиці' || computer === 'Гупка')) ||
+(player === 'Ножиці' && (computer === 'Повітря' || computer === 'Папір' || computer === 'Гупка')) ||
+(player === 'Гупка' && (computer === 'Папір' || computer === 'Повітря' || computer === 'Вода')) ||
+(player === 'Папір' && (computer === 'Повітря' || computer === 'Вода' || computer === 'Камінь')) ||
+(player === 'Повітря' && (computer === 'Вода' || computer === 'Камінь' || computer === 'Вогонь')) ||
+(player === 'Вода' && (computer === 'Камінь' || computer === 'Вогонь' || computer === 'Ножиці')))
 {     score += 1;
 document.getElementById('displayPlayer').innerHTML = 'Ти виграв, вітаю!!!';
 document.getElementById('displayComputer').innerHTML = 'Рахунок : ' + score;
