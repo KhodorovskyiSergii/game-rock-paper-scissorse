@@ -1,5 +1,6 @@
 let computer = '';
 let player = '';
+let score = 0;
 
 function buttonHelp(){
     let elem = document.getElementById('instruction');
@@ -19,22 +20,22 @@ function backToGame(){
     } 
  }
 
-function playerChoice(button){
-    if(player.length > 3) {
-        player = button;
-    } else {
-    player += button;
+function playerChoice(button) {
+    player = button;
+    computer = computerChoiceS();
+    displayPlayer();
+    displayComputer();
+    // fundWiner();
 }
-// displayPlayer();
-computerChoiceS();
-}
- function computerChoiceS(){
+
+function computerChoiceS(){
    
     let choices = ['Камень', 'Воздух', 'Бумага', 'Гупка', 'Ножници', 'Огонь', 'Вода'];
     let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    computer += computerChoice;
-    // displayCoputer();
+    // computer += computerChoice;
+ 
     fundWiner();
+    return computerChoice;
 }; 
 
 
@@ -47,8 +48,9 @@ if ((computer === 'Камень' && (player === 'Огонь' || player === 'Но
 (computer === 'Бумага' && (player === 'Воздух' || player === 'Вода' || player === 'Камень')) ||
 (computer === 'Воздух' && (player === 'Вода' || player === 'Камень' || player === 'Огонь')) ||
 (computer === 'Вода' && (player === 'Камень' || player === 'Огонь' || player === 'Ножници'))) {
+    score -= 1;
     document.getElementById('displayPlayer').innerHTML = 'Ти програв!';
-    document.getElementById('displayCoputer').innerHTML = '..........';
+    document.getElementById('displayComputer').innerHTML = 'Рахунок : ' + score;
 } else if ((player === 'Камень' && (computer === 'Огонь' || computer === 'Ножници' || computer === 'Гупка')) ||
 (player === 'Огонь' && (computer === 'Бумага' || computer === 'Ножници' || computer === 'Гупка')) ||
 (player === 'Ножници' && (computer === 'Воздух' || computer === 'Бумага' || computer === 'Гупка')) ||
@@ -56,19 +58,28 @@ if ((computer === 'Камень' && (player === 'Огонь' || player === 'Но
 (player === 'Бумага' && (computer === 'Воздух' || computer === 'Вода' || computer === 'Камень')) ||
 (player === 'Воздух' && (computer === 'Вода' || computer === 'Камень' || computer === 'Огонь')) ||
 (player === 'Вода' && (computer === 'Камень' || computer === 'Огонь' || computer === 'Ножници')))
-{
+{     score += 1;
 document.getElementById('displayPlayer').innerHTML = 'Ти виграв, вітаю!!!';
-document.getElementById('displayCoputer').innerHTML = '.....';
+document.getElementById('displayComputer').innerHTML = 'Рахунок : ' + score;
 } else {
     player += 'Нічия!'
     document.getElementById('displayPlayer').innerHTML = 'Нічия!';
-    document.getElementById('displayCoputer').innerHTML = '....';
-}
- },1000); 
- displayCoputer();
- displayPlayer();
+    document.getElementById('displayComputer').innerHTML = 'Рахунок : ' + score;
 }
 
+ },1000); 
+ }
+
+
+
+function buttonclear() {
+    // Очистіть значення гравця та комп'ютера для нового раунду
+    player = 'Тут вибір гравця';
+    computer = 'Тут вибір компютера';
+    score = 0;
+    displayPlayer();
+    displayComputer();
+}
 
 
 
@@ -77,6 +88,6 @@ document.getElementById('displayPlayer').innerHTML = player;
 }
 
 
-function displayCoputer(){
-document.getElementById('displayCoputer').innerHTML = computer;
+function displayComputer(){
+document.getElementById('displayComputer').innerHTML = computer;
 }

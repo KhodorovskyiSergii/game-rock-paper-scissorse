@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>гра: камінь, ножиці, папір!</title>
 </head>
 <body>
-    <div id="instruction" style="display: none;">
+    <div class="instruction" id="instruction" style="display: none;">
     <img src="images/Capture.PNG" alt="foto">
     <button  onclick="backToGame()">back to game</button>
     </div>
     <div id="myGame" class="game">
-        <div class="displayCoputer" id="displayCoputer">Вибір компютера</div>
-        <div class="displayPlayer" id="displayPlayer">Вибір гравця</div>
+        <div class="displayComputer" id="displayComputer">Тут вибір компютера</div>
+        <div class="displayPlayer" id="displayPlayer">Тут вибір гравця</div>
         <button onclick="playerChoice('Камень')">Камень</button>
         <button onclick="playerChoice('Воздух')">Воздух</button>
         <button onclick="playerChoice('Бумага')">Бумага</button>
@@ -21,9 +21,10 @@
         <button onclick="playerChoice('Ножници')">Ножници</button>
         <button onclick="playerChoice('Огонь')">Огонь</button>
         <button onclick="playerChoice('Вода')">Вода</button>
-        <button onclick="buttonCheck('check')">check</button>
+        <button onclick="buttonclear()">clear</button>
         <button onclick="buttonHelp()">help</button>
     </div>
     <script src="index.js"></script>
 </body>
 </html> 
+

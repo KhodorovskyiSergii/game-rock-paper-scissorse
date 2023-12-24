@@ -31,7 +31,7 @@ body{
 }
 
 
-.displayCoputer{
+.displayComputer{
     grid-column: span 3;
     text-align: center;
     margin: 3px;
@@ -54,4 +54,74 @@ button {
 button:active {
     color: blue;
     border: 3px solid red;
+}
+
+@media (max-width: 860px) {
+    .instruction {
+        max-width: 500px;
+        margin: 40px auto; /* Змінено значення margin */
+    }
+
+    .instruction img {
+        max-width: 100%; /* Зменшення розміру картинки до ширини контейнера */
+        height: auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .instruction {
+        max-width: 400px;
+        margin: 35px auto; /* Змінено значення margin */
+    }
+
+    .instruction img {
+        max-width: 100%; /* Зменшення розміру картинки до ширини контейнера */
+        height: auto;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .instruction {
+        max-width: 300px;
+        margin: 30px auto; /* Змінено значення margin */
+    }
+
+    .instruction img {
+        max-width: 100%; /* Зменшення розміру картинки до ширини контейнера */
+        height: auto;
+    }
+
+    .game{
+        max-width: 345px;
+        margin: auto;
+    }
+
+    button{
+        padding: 5px;
+    }
+}
+
+@media (max-width: 380px){
+    button{
+     margin: 1px;
+     padding: 3px;
+    }
+}
+
+@media (max-width: 350px) {
+    .instruction {
+        max-width: 280px;
+        margin: 20px auto; /* Змінено значення margin */
+    }
+
+    .instruction img {
+        max-width: 100%; /* Зменшення розміру картинки до ширини контейнера */
+        height: auto;
+    }
+
+    button{
+        font-size: 1.2em;
+        padding: 2px;
+    }
 }
